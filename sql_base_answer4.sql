@@ -1,13 +1,13 @@
 -- Active: 1763136769886@@127.0.0.1@3306@worldcup
 USE worldcup;
 
---32
-SELECT MIN(ranking) AS 'AグループのFIFAランク最上位' FROM countries
+-- 32
+SELECT MIN(ranking) AS '32-AグループのFIFAランク最上位' FROM countries
     WHERE group_name = "A"
     GROUP BY group_name;
 
---33
-SELECT SUM(ranking) AS 'AグループのFIFCランク合計値' FROM countries
+-- 33
+SELECT SUM(ranking) AS '33-AグループのFIFCランク合計値' FROM countries
     WHERE group_name = "C"
     GROUP BY group_name;
 -- 34
@@ -32,5 +32,5 @@ SELECT c.name, g.goal_time, p.position, p.name FROM countries c
 -- 39
 SELECT p.kickoff, m.name AS my_country, e.name AS enemy_country FROM pairings p
     LEFT JOIN countries e ON e.id = p.enemy_country_id
-    LEFT JOIN countries m ON m.id = p.my_country_id
+    LEFT JOIN countries m ON m.id = p.my_country_id;
 
